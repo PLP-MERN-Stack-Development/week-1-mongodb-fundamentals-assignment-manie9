@@ -45,3 +45,64 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [MongoDB Documentation](https://docs.mongodb.com/)
 - [MongoDB University](https://university.mongodb.com/)
 - [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+
+
+
+
+## 🛠️ Setup Instructions
+
+I used MongoDB Atlas for this assignment.
+Ensure you have a MongoDB Atlas account and a cluster set up.
+Replace the connection string in insert_books.js with your MongoDB Atlas connection string:
+
+const uri = 'mongodb+srv://<username>:<password>@cluster.mongodb.net/';
+
+
+## Importing Data
+Create a books.json File:
+I created a books.json file in VS Code containing the sample book data.
+Example content of books.json:
+[
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Fiction",
+    "published_year": 1960,
+    "price": 12.99,
+    "in_stock": true,
+    "pages": 336,
+    "publisher": "J. B. Lippincott & Co."
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "published_year": 1949,
+    "price": 10.99,
+    "in_stock": true,
+    "pages": 328,
+    "publisher": "Secker & Warburg"
+  }
+  // Add more books here
+]
+
+## Import Data into MongoDB Compass:
+
+Open MongoDB Compass and connect to your MongoDB Atlas cluster.
+Navigate to the plp_bookstore database and create a books collection.
+Click on Add Data > Import File.
+Select the books.json file and import the data into the books collection.
+
+## Running Queries
+Open MongoDB Compass or MongoDB Shell (mongosh).
+Navigate to the plp_bookstore database and select the books collection.
+Run the queries provided in queries.js:
+
+Example query, Update the price of a specific book
+db.books.updateOne({ title: "1984" }, { $set: { price: 9.99 } });
+
+## Verification
+Open MongoDB Compass and verify that the books collection contains the sample data.
+Take a screenshot of the books collection and include it in your submission. 
+
+
